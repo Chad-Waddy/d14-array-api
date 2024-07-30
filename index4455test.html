@@ -1,0 +1,45 @@
+<!--https://api.nasa.gov/planetary/earth/imagery?lon=-95.33&lat=29.78&date=2018-01-01&dim=0.15&api_key=DEMO_KEY-->
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+
+        
+    </head> 
+    <body>
+        
+        <input type="text" name="" id="">
+        <input type="text" name="" id="Lotag">
+        <button onclick="grabData()">run fetch</button>
+
+        <div id="displayArea">display area 
+
+
+        </div>
+            <script>
+                function grabData() {
+                var displayArea = document.getElementById('displayArea')
+                fetch('https://images-api.nasa.gov/search?q=earth&page_size=2')
+                .then(response => response.json())
+                .then(data => displayArea.innerHTML = data)
+            }
+
+//// notes
+// onclick  fetch(file)
+                //.then (x function runcommand)
+
+               // async //while the file is running run this command 
+
+
+            </script>
+    </body>
+
+
+
+
+
+
+
+
+</html>

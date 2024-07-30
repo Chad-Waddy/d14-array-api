@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+</head>
+<body>
+    
+    <input type="text" name="" id="inputID" value="" onkeyup="autoComplete(this.value)">
+    <ul id="result">
+
+    </ul>
+
+
+
+    <script>
+        // array of words // print array
+            //var terms = ['apple','apple watch','apple macbook'];
+            var terms = ['apple', 'apple watch', 'apple macbook', 'apple macbook pro', 'iphone', 'iphone 12']; 
+            // declare the message/ print area
+            var resultEL = document.getElementById("result");
+            //delcare the listItems variable that will hold the list of terms beung printed
+            var listItems = '';
+            //loop thru the array of terms ; grab eac word and add it to {Listitem} <var>
+            terms.forEach( word => listItems += `<li>${word}</li>`)
+            //terms.forEach( word += `<li>${word}</li>`)
+                //send the list of words to the HTML DOM
+                resultEL.innerHTML = listItems;
+
+
+        // Search array
+                    //** the autocomplete goes on the onkey because when u key on the textbox it runs the search 
+                function autoComplete(input) {
+                   // var resultEL = document.getElementById('result');
+                   // var regExInput =
+                   var searchableTerms = ['apple', 'apple watch', 'apple macbook', 'apple macbook pro', 'iphone', 'iphone 12']; 
+
+                   
+                   //format the input to be a case insensitive regExpression
+                   var regExInput = new RegExp(input,"i");
+                    //filter/save the term that matches the input
+                    var matchingTerms = searchableTerms.filter(term => term.match(regExInput))
+                    //grab the list element from the result box
+                   var resultEL = document.getElementById("result");
+                    //create list variable
+                   var listItems = "";
+// loop array
+                    //grab user input from box
+                 var resultEL = document.getElementById('result')
+                   matchingTerms.forEach(word => listItems += `<li>${word}</li>`)
+                    //send the list of terms to the html dom
+                   resultEL.innerHTML = listItems;
+                 //////////   var searchableTerms = ['apple', 'apple watch', 'apple macbook', 'apple macbook pro', 'iphone', 'iphone 12']; 
+                  
+                 
+                        //was goiing to rewrite 
+                 
+                 //////var searchableTerms = ['apple', 'apple watch', 'apple macbook', 'apple macbook pro', 'iphone', 'iphone 12'];
+                   ///////// var regExInput=new RegExp(input,'i');
+                    ////////////var matchingTerms = searchableTerms.filter(terms=>term.match(regEx))
+                }
+
+    </script>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+</html>

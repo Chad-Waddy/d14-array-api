@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+
+        
+    </head> 
+    <body>
+        <input placeholder="Enter search term" onchange="search(this.value)" />
+        <main id="output" class="flex flex-wrap px-3"></main>
+        <script>
+           function search(searchWord) {
+            var outputArea = document.getElementById('output')
+            var nasaArray = [];
+            var card = ``;
+            var url = `http://images-api.nasa.gov/search?q=${searchWord}&page_size=2&media_type=image`;
+           
+           fetch(url) //get json data from nasa 
+                .then(response => { return response.json();}) // convert jason into reg
+                .then(nasaData => {
+                    nasaArray = nasaData.collection.items; //focus just the part of the ...
+                    nasaArray.forEach(item => card +=
+                        `<div class="card card-compact bg-base-100 w-96 shadow-xl">
+                            <figure><img src="${item.links[0].href}"  alt=/></figure>
+                            <div class="card-body">
+                                <h2 class="card-title">${item.data[0].title}</h2>
+                                <p>${item.data[0].description}</p>
+                            </div>
+                        </div>`);
+                    document.getElementById('output').innerHTML = card;
+                })
+        };
+        </script>
+    </body>
+</html>

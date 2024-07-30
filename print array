@@ -1,0 +1,12 @@
+// print array
+            //var terms = ['apple','apple watch','apple macbook'];
+            var terms = ['apple', 'apple watch', 'apple macbook', 'apple macbook pro', 'iphone', 'iphone 12']; 
+            // delare the message/ print area
+            var resultEL = document.getElementById("result");
+            //delcare the listItems variable that will hold the list of terms beung printed
+            var listItems = '';
+            //loop thru the array of terms ; grab eac word and add it to {Listitem} <var>
+            terms.forEach( word => listItems += `<li>${word}</li>`)
+            //terms.forEach( word += `<li>${word}</li>`)
+                //send the list of words to the HTML DOM
+                resultEL.innerHTML = listItems;

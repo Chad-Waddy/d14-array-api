@@ -1,0 +1,35 @@
+<html>
+
+
+
+
+
+
+<body>
+    <input type="text" id="ageInputBox">
+    <button onclick="checkAre()">check age </button> <!-- when you click the button run "checkAre" function-->
+    <div id="msgArea"></div>
+
+    <script>
+        
+                    function checkAre(){ //the function is called "checkAre"
+                        var ageValue = document.getElementById('ageInputBox').value; //age value variable is going to be read in the age inpit box
+                        var requiredAge = 21; // set age variable 
+                        var msgArea = document.getElementById('msgArea')
+                        if(ageValue >= requiredAge)// if the age value entered is less then the required age variable..
+                        {
+                            msgArea.innerHTML = "you old enough"; //then print ....
+                        }else { 
+                            msgArea.innerHTML = "nahh you yunb" //othwise print ....
+                        }
+                    } 
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
