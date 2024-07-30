@@ -19,8 +19,8 @@
            fetch(url) //get json data from nasa 
                 .then(response => { return response.json();}) // convert jason into reg
                 .then(nasaData => {
-                    nasaArray = nasaData.collection.items; //focus just the part of the dafta that we need 
-                    nasaArray.forEach(item => card +=  // loop thru the nasa array and add it to the card template
+                    nasaArray = nasaData.collection.items; //focus just the part of the ...
+                    nasaArray.forEach(item => card +=
                         `<div class="card card-compact bg-base-100 w-96 shadow-xl">
                             <figure><img src="${item.links[0].href}"  alt=/></figure>
                             <div class="card-body">
@@ -28,7 +28,7 @@
                                 <p>${item.data[0].description}</p>
                             </div>
                         </div>`);
-                    document.getElementById('output').innerHTML = card; // send the cards to the output display html 
+                    document.getElementById('output').innerHTML = card;
                 })
         };
         </script>
